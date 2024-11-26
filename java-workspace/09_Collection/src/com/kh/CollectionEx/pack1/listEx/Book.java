@@ -1,4 +1,4 @@
-package com.kh.poly.pack2.bookPre;
+package com.kh.CollectionEx.pack1.listEx;
 
 public class Book {
     private String title;
@@ -40,8 +40,11 @@ public class Book {
 
     @Override
     public String toString() {
-        return "제목 : "+ title + '\'' +
-                "저자 : "+ author + '\'' +
-                "가격 :" + price;
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
+
