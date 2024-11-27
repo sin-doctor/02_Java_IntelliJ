@@ -1,8 +1,10 @@
 package com.kh.CollectionEx.pack1.listEx;
 
 // 컬렉션 프레임워크 : Java에서 자료구조를 만들어서 모아둔 것
-// java.util 폴더 안에 있음
-
+// java.util 폴더안에 있음
+//특징
+//1) 크기 제한 없음(부족하면 자동으로 증가)
+//2) 추가 수정 삭제 검색 등 다양한 기능이 구현되어 있음
 import java.util.ArrayList;
 
 //특징
@@ -20,7 +22,7 @@ public class BookService {
     public void method1(){
         // List 객체 생성
         //  - List (인터페이스)  -> 객체로 보기 어려움 객체 생성 불가 -> 다형성 이용
-        //    List 기능을 물려받은 ArrayList (클래스) 활용
+        //    List 기능을 물려받은 ArrayList.txt (클래스) 활용
 
         int arr1[] = new int[3]; //이 안에는 정수형으로 3개의 값만 들어갈 수 있음
         String arr2[] = new String[3]; // 이 안에는 문자열로 3개의 값만 들어갈 수 이씅ㅁ
@@ -50,12 +52,12 @@ public class BookService {
     public void method2(){
 
         /*
-        String 타입으로 제한된 ArrayList 객체 생성방법은 여러가지가 존재
+        String 타입으로 제한된 ArrayList.txt 객체 생성방법은 여러가지가 존재
         개발자가 담길 원하는 타입을 제한했다면 앞 뒤로 완벽하게 String만 사용할 수 있도록 설정해주는것이
         담는공간 모두 String          = 담는 값이 String
-        ArrayList<원하는 자료형> list1 = new ArrayList<원하는 자료형>();
-        ArrayList list1 = new ArrayList<원하는 자료형>();
-        ArrayList<원하는 자료형> list1 = new ArrayList<>();
+        ArrayList.txt<원하는 자료형> list1 = new ArrayList.txt<원하는 자료형>();
+        ArrayList.txt list1 = new ArrayList.txt<원하는 자료형>();
+        ArrayList.txt<원하는 자료형> list1 = new ArrayList.txt<>();
 
          */
         ArrayList list1 = new ArrayList<String>();
@@ -70,6 +72,49 @@ public class BookService {
         System.out.println(list1.size()); // 총 갯수 세기
 
 
+
+    }
+
+    // 책을 추가할 수 있도록
+    private ArrayList<Book> bookList = new ArrayList<>();
+    //한번에 책이름, 저자,가격을 저장하고 볼 수 있도록 설정
+    // 1. 책 추가하기 기능 만들자!
+    public void addBook(String title, String author, int price){
+        //Book b1 = new Book("책제목","저자,가격);
+        // 하나씩 직접적으로 넣어줬다면
+        // 고객이 입력한 값을 전달받아서 저장하겠다 설정
+        Book b1 = new Book(title, author, price);
+        bookList.add(b1);
+        // bookList.add(new Book(title, author, price)); 79
+        // 81번째 줄은 작성한 코드와 동일
+
+        bookList.add(new Book(title, author, price));
+        System.out.print(bookList);
+        System.out.println("책이 성공적으로 추가되었습니다.");
+    }
+    public ArrayList<Book> removeTitle(String title){
+        boolean found = false;
+
+
+        for(int i = 0; i < bookList.size(); i++){
+            if(bookList.get(i).getTitle().equals(title)){
+                bookList.remove(i); //책 제거
+                System.out.println("책이 성공적으로 삭제되었습니다." + bookList);
+                found = true;
+                break;
+            }
+
+        }
+
+        if(!found){
+            System.out.println("해당 제목의 책을 찾을 수 없습니다. : "+ title);
+
+        }
+        return bookList;
+    }
+    //3번 저장된 책을 모두 확인하기
+    public ArrayList<Book> getBookList(){
+        return bookList; //get 가지고 잇는 모든 책 리스트를 호출해서 전달하기
 
     }
 }
