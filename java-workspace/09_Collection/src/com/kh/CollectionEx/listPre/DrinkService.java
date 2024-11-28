@@ -36,7 +36,6 @@ public class DrinkService {
             if(drinks.get(i).getName().equals(name)) {
               drinks.remove(i);
               System.out.println("["+name+"] 이 성공적으로 제거되었습니다.");
-
             }
         }
     }
@@ -51,7 +50,6 @@ public class DrinkService {
                 System.out.println("검색된 음료가 없습니다");
             }
         }
-
     }
 
     //6. Drink 음료 특정 음료 검색 -> 가격을 통해 검색
