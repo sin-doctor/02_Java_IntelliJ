@@ -27,6 +27,8 @@ public class ExScanner1 {
             System.out.println(e.getMessage());
             System.out.println("예기치 못한 문제가 발생했습니다.");
             System.out.println("프로그램을 종료합니다.");
+        }finally {
+
         }
     }
 }
