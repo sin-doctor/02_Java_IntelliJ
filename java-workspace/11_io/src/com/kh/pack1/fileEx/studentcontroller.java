@@ -1,32 +1,31 @@
 package com.kh.pack1.fileEx;
 
 public class studentcontroller {
-    private student[] students;
+    private student[] sArr = new student[5];
+    public static final int CUT_LINE = 60;
 
-    public void StudentController() {
-        students = new student[]{
-        new student("김길동", "자바", 100),
-                new student("박길동", "디비", 50),
-                new student("이길동", "화면", 85),
-                new student("정길동", "서버", 60),
-                new student("홍길동", "자바", 20)};
-
+    public studentcontroller() {
+        sArr[0] = new student("김길동","자바",100);
+        sArr[1] = new student("박길동","디비",50);
+        sArr[2] = new student("이길동","화면",85);
+        sArr[3] = new student("정길동","서버",60);
+        sArr[4] = new student("홍길동","자바",20);
     }
+
     public student[] printStudent() {
-        return students;
+        return sArr;
     }
-    public int sumScore() {
+
+    public int sumScore(){
         int sum = 0;
-        for (student student : students) {
-            sum += student.getScore();
+        for(student s : sArr){
+            sum += s.getScore();
         }
         return sum;
     }
-    public double[] avgScore() {
-        double[] result = new double[2];
+    public double[] avgScore(){
         int sum = sumScore();
-        result[0] = sum; // 합계
-        result[1] = (double) sum / students.length; // 평균
-        return result;
+        double avg = (double)sum/(double)sArr.length;
+        return new double[]{avg,sum};
     }
 }

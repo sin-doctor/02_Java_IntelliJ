@@ -40,10 +40,9 @@ public class student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", subject='" + subject + '\'' +
-                ", score=" + score +
-                '}';
+        return
+                "이름 :" + name + '\'' +
+                ", 과목 : '" + subject + '\'' +
+                ", 점수 : " + score;
     }
 }
