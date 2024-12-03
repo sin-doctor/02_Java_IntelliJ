@@ -11,7 +11,7 @@ public class FileWriteTrue {
     public void writeTxt() {
         String path = System.getProperty("user.home") + "/Desktop/";
         Scanner scanner = new Scanner(System.in);
-        System.out.print("내용일 이어서 작성할 파일명을 입력하세요 : ");
+        System.out.print("내용을 이어서 작성할 파일명을 입력하세요 : ");
         String fileName = scanner.nextLine();
         // 만약에 파일이 존재하지 않는다면 파일이 존재하지 않습니다.
         // 파일을 생성하려면 Yes를 입력하고
